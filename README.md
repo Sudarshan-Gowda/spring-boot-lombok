@@ -9,13 +9,14 @@ Lombok is a Java library that can plug into editors and build tools to generate 
 
 * Add the dependencys to your `pom.file` to import the library, In case for Java/J2EE project, download and add the library externally.
 
-``
+```
 <dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-``
+	<groupId>org.projectlombok</groupId>
+	<artifactId>lombok</artifactId>
+	<optional>true</optional>
+</dependency>
+
+```
 
 * To work with Spring Too Suite or in Eclipse, install the lombok jar as below, <br>
 
