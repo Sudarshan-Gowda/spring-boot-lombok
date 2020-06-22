@@ -37,16 +37,75 @@ Lombok is a Java library that can plug into editors and build tools to generate 
 
 ##### Generate getters, setters, toString, equals and hashCode </b><br>
 Use @Getter, @Setter, @ToString, @EqualsAndHashCode to generate field getters and setters, toString, equals and hashCode methods separately.
+```
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
+public class SetterGetterConstructorsToString {
+
+	private int id;
+	private String name;
+	private String place;
+
+}
+
+```
+
 
 ##### @Data and @Value </b>
 
 * You can also use @Data for the above code generation. @Data is equivalent to @Getter + @Setter + @RequiredArgsConstructor + @ToString + @EqualsAndHashCode
 
+```
+@Data
+public class DataAnnotations {
+
+	@NonNull
+	private Integer id;
+	private String name;
+	private String place;
+
+}
+```
+
 * Use @Value if you'd like to create an immutable entity. @Value is equivalent to @Getter + @FieldDefaults(makeFinal=true, level=AccessLevel.PRIVATE) + @AllArgsConstructor + @ToString + @EqualsAndHashCode
+
+```
+@Value
+public class ValueAnnotations {
+
+	private Integer id;
+	private String name;
+	private String place;
+
+}
+```
+
 
 
 ##### Add a Logger with @Slf4j</b>
 Use @Slf4j to generate a logger field, make sure slf4j-api is already included in your project dependencies
 
+```
+@Slf4j
+public class EmployeeService {
 
+	public Employee getEmployeeById(int id) {
+		try {
+			log.info("getEmployeeById");
+
+			Employee emp = new Employee(1, "Sudarshan", "India");
+			return emp;
+
+		} catch (Exception e) {
+			log.info("getEmployeeById", e);
+			return null;
+		}
+	}
+
+}
+```
 
